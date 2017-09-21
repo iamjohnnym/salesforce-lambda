@@ -19,47 +19,47 @@ after_success:
 - python-codacy-coverage -r coverage.xml
 
 deploy:
-  matrix:
-  - provider: pypi
-    distributions: sdist
-    server: https://test.pypi.org/legacy/
-    user: iamjohnnym
-    password:
-      secure: t67YMVegc6Ndnm0GbmWlHLK8/Prj8zDcPvPyECW5hPIL6q+LYHLP8DwpU84lBKWtiWw1kZgNAS/7NTz7C0AolgF9n/a+7QWqEyvWVllRkrKPcvjbc3SmrGJO311nvmCC4VIQoTJG96tVen83suaXPXMnbLXKShwJtkD8Sq6Yg4pMFXnfu2fG3gtKHTuTyHiDR914/vsgZMPQQARMTMPjPYU3VtAKpPaAcFHe+NwB0YdsqZlHLMokoCwrQF239VkL0YOxSyDtLRRFbJbL+nmOIRaaYLJ+JJssKtbuYGU5AOCMmuMSLqBtp9uZwdCpEWDz0X+62B1haOa+CrtUL+O+sBnXgmVtDo6vRU9Tmucyn3SNahL9d2I3uqZYL8at6EFUQ5qLLJCbeCFOhwyU4QfaCQFx7EtfK1jxM5T8YHSIyKziJxsVzB7UHiiBMNpGjbnjvuyP4gkDqmexh/Ky/nIueDx+ry2S0QHTZbqaVcZjyvRAPKTIAU4Jwxm+TXZd2b2vHrzPcJtCCIIAHxJL0uOjtm0975rDbwt1EAP57ew1cYm6tURVoTIkn7/O/JpuWvLfCgeRklWFAZGYg4QCdQx8/0yXnYlDLQQZW0MWTMXgM1S1sr1Uy6Vwntgm4hCAtFuUd8CyJxjDjr76TNJf2n14bYgfyXYR7HZGPi4aqS9LOd8=
-    on:
-      branch: staging
-      tags: false
-      condition: $TRAVIS_PYTHON_VERSION = "2.7"
-  - provider: pypi
-    distributions: sdist
-    server: https://test.pypi.org/legacy/
-    user: iamjohnnym
-    password:
-      secure: t67YMVegc6Ndnm0GbmWlHLK8/Prj8zDcPvPyECW5hPIL6q+LYHLP8DwpU84lBKWtiWw1kZgNAS/7NTz7C0AolgF9n/a+7QWqEyvWVllRkrKPcvjbc3SmrGJO311nvmCC4VIQoTJG96tVen83suaXPXMnbLXKShwJtkD8Sq6Yg4pMFXnfu2fG3gtKHTuTyHiDR914/vsgZMPQQARMTMPjPYU3VtAKpPaAcFHe+NwB0YdsqZlHLMokoCwrQF239VkL0YOxSyDtLRRFbJbL+nmOIRaaYLJ+JJssKtbuYGU5AOCMmuMSLqBtp9uZwdCpEWDz0X+62B1haOa+CrtUL+O+sBnXgmVtDo6vRU9Tmucyn3SNahL9d2I3uqZYL8at6EFUQ5qLLJCbeCFOhwyU4QfaCQFx7EtfK1jxM5T8YHSIyKziJxsVzB7UHiiBMNpGjbnjvuyP4gkDqmexh/Ky/nIueDx+ry2S0QHTZbqaVcZjyvRAPKTIAU4Jwxm+TXZd2b2vHrzPcJtCCIIAHxJL0uOjtm0975rDbwt1EAP57ew1cYm6tURVoTIkn7/O/JpuWvLfCgeRklWFAZGYg4QCdQx8/0yXnYlDLQQZW0MWTMXgM1S1sr1Uy6Vwntgm4hCAtFuUd8CyJxjDjr76TNJf2n14bYgfyXYR7HZGPi4aqS9LOd8=
-    on:
-      branch: master
-      tags: false
-      condition: $TRAVIS_PYTHON_VERSION = "2.7"
-  - provider: pypi
-    distributions: sdist
-    user: iamjohnnym
-    password:
-      secure: t67YMVegc6Ndnm0GbmWlHLK8/Prj8zDcPvPyECW5hPIL6q+LYHLP8DwpU84lBKWtiWw1kZgNAS/7NTz7C0AolgF9n/a+7QWqEyvWVllRkrKPcvjbc3SmrGJO311nvmCC4VIQoTJG96tVen83suaXPXMnbLXKShwJtkD8Sq6Yg4pMFXnfu2fG3gtKHTuTyHiDR914/vsgZMPQQARMTMPjPYU3VtAKpPaAcFHe+NwB0YdsqZlHLMokoCwrQF239VkL0YOxSyDtLRRFbJbL+nmOIRaaYLJ+JJssKtbuYGU5AOCMmuMSLqBtp9uZwdCpEWDz0X+62B1haOa+CrtUL+O+sBnXgmVtDo6vRU9Tmucyn3SNahL9d2I3uqZYL8at6EFUQ5qLLJCbeCFOhwyU4QfaCQFx7EtfK1jxM5T8YHSIyKziJxsVzB7UHiiBMNpGjbnjvuyP4gkDqmexh/Ky/nIueDx+ry2S0QHTZbqaVcZjyvRAPKTIAU4Jwxm+TXZd2b2vHrzPcJtCCIIAHxJL0uOjtm0975rDbwt1EAP57ew1cYm6tURVoTIkn7/O/JpuWvLfCgeRklWFAZGYg4QCdQx8/0yXnYlDLQQZW0MWTMXgM1S1sr1Uy6Vwntgm4hCAtFuUd8CyJxjDjr76TNJf2n14bYgfyXYR7HZGPi4aqS9LOd8=
-    on:
-      branch: master
-      tags: true
-      condition: $TRAVIS_PYTHON_VERSION = "2.7"
-  - provider: lambda
-    function_name: salesforce-lambda-staging
-    region: us-east-1
-    role: 'arn:aws:iam::810306730299:role/service-role/salesforce-lambda-role'
-    runtime: python2.7
-    handler_name: salesforce_lambda.lambda_handler
-    secret_access_key:
-      secure: IQrt3lyz8c4WZ/CCgXSPtxcgthaROD3i06PwYaz0WxQ2teTJns5zYu8RDkfN3hfvfaR76Xiq7tUhic+2JbFdJMmkJzuLjMLjpnCNzRTCjTHOImwKc6YJxPD7wlaQflAHgY0hoQMPFQpSSCYVJOCITrjpAnFKTvHleNrNMaJUmU4IqbrOxZdDyJJFnO6ikLzeGye7NsD9JPU/IQFDZyHucjqze1kkMZ+j7ia6wYdgM24d0R/oNo22UqvGHFNJK105cCyeSD17I5GUaGCZJdBzcHPvEKarlec6hE28pcoVhpSr3mZgFlU0sDnPTfplfJp4OuzF0JIybWewoO/DFAPCFsMcn8/mPfZk5SbJo5IMNwpGUwI334ZFGuXQOpPa91jDVS9z/ghvuNcyoq26id6g+cyMcmzawJPkuPYyPSuR+FsKzHV0APRzKn2IA7IJQ7Dc7cZzTy2r7t2LpdbNHkg5SidFORl7LreJnIqxJaaPgXoG9vWJkNhvPPqWXhe9UH3AhmmpWfJ/GCnwUfY3yuV20Q2uhAtqgUkZGAeOO3o/41LbtJHWuKBLmLlV1HDFy2Rn/Sf+qBqTlEZLng/bp79QWKOOShsDBI/pIpkLAiwZBBVoN1JbyzOXevug0unad7Gp0ckI0qycBUwVEvm9mLQz5vUMzPDFl9TBDXfexPmkY5A=
-    access_key_id:
-      secure: YIIpt5I4CD4VRcyC2dxef0wawzEqe8kc+Lm4U8QDpjRQNiye9NEcCtDcG2ytPz15DKDV/109G4NkDHZPYmRUdojtm4FRKknjfA+4kBELOIaHXTyONfCRDJBGG/twmUdazFN4F4R7TcxV1vxW4nHYHw+5JYS/mZNT0iTEnG+mf3aqltxD4yR8V8vxyMbE/qht0g46VBNYBatrqA/c0tn88OzKDOQw/hnTurPMA8cOJR+aRDs6ITXvmAXdXY7ZoZN9adE3Z9YsJCV7vheINtKpeDafzribmXMPgR6PB3zfbEq8kG9SNLI7GyWnrJypaSw7sBI2MmP3ECU+gmNjLPjQLV2b4X7Ze8Iri+mPiDiYpCLH5t3LTbDWcBDZrsuwbhJSRTC2nfmBVWioOgeZTd/DXvX443mwG8llBacuZfRTQGcE+lscKa+UQFX+1gYrBcLYxGld5wxvUfQcigpaS/Q6S7ZkR2X6of5Zgw1VpUaVJ9qH0FwqwaGzibgZTfdrMex7SqhL7EYfX+h42dcBocjBNxk3/AMl1gq0YiWPUqqAIiCA4VolnMvk7nT9Nit4h2GWvtb8WNU5TuBIElWikm5d9/X0det91LHzbvO1osFcjMrGQWiD8PRGambkSNmjNyf2OecOdSzTdtsxisZRT8htwXxNqqpJnGYnNhpRQIZyuQo=
-    on:
-      branch: staging
-      tags: false
-      condition: $TRAVIS_PYTHON_VERSION = "2.7"
+- provider: pypi
+  distributions: sdist
+  server: https://test.pypi.org/legacy/
+  user: iamjohnnym
+  password:
+    secure: t67YMVegc6Ndnm0GbmWlHLK8/Prj8zDcPvPyECW5hPIL6q+LYHLP8DwpU84lBKWtiWw1kZgNAS/7NTz7C0AolgF9n/a+7QWqEyvWVllRkrKPcvjbc3SmrGJO311nvmCC4VIQoTJG96tVen83suaXPXMnbLXKShwJtkD8Sq6Yg4pMFXnfu2fG3gtKHTuTyHiDR914/vsgZMPQQARMTMPjPYU3VtAKpPaAcFHe+NwB0YdsqZlHLMokoCwrQF239VkL0YOxSyDtLRRFbJbL+nmOIRaaYLJ+JJssKtbuYGU5AOCMmuMSLqBtp9uZwdCpEWDz0X+62B1haOa+CrtUL+O+sBnXgmVtDo6vRU9Tmucyn3SNahL9d2I3uqZYL8at6EFUQ5qLLJCbeCFOhwyU4QfaCQFx7EtfK1jxM5T8YHSIyKziJxsVzB7UHiiBMNpGjbnjvuyP4gkDqmexh/Ky/nIueDx+ry2S0QHTZbqaVcZjyvRAPKTIAU4Jwxm+TXZd2b2vHrzPcJtCCIIAHxJL0uOjtm0975rDbwt1EAP57ew1cYm6tURVoTIkn7/O/JpuWvLfCgeRklWFAZGYg4QCdQx8/0yXnYlDLQQZW0MWTMXgM1S1sr1Uy6Vwntgm4hCAtFuUd8CyJxjDjr76TNJf2n14bYgfyXYR7HZGPi4aqS9LOd8=
+  on:
+    branch: staging
+    tags: false
+    condition: $TRAVIS_PYTHON_VERSION = "2.7"
+- provider: pypi
+  distributions: sdist
+  server: https://test.pypi.org/legacy/
+  user: iamjohnnym
+  password:
+    secure: t67YMVegc6Ndnm0GbmWlHLK8/Prj8zDcPvPyECW5hPIL6q+LYHLP8DwpU84lBKWtiWw1kZgNAS/7NTz7C0AolgF9n/a+7QWqEyvWVllRkrKPcvjbc3SmrGJO311nvmCC4VIQoTJG96tVen83suaXPXMnbLXKShwJtkD8Sq6Yg4pMFXnfu2fG3gtKHTuTyHiDR914/vsgZMPQQARMTMPjPYU3VtAKpPaAcFHe+NwB0YdsqZlHLMokoCwrQF239VkL0YOxSyDtLRRFbJbL+nmOIRaaYLJ+JJssKtbuYGU5AOCMmuMSLqBtp9uZwdCpEWDz0X+62B1haOa+CrtUL+O+sBnXgmVtDo6vRU9Tmucyn3SNahL9d2I3uqZYL8at6EFUQ5qLLJCbeCFOhwyU4QfaCQFx7EtfK1jxM5T8YHSIyKziJxsVzB7UHiiBMNpGjbnjvuyP4gkDqmexh/Ky/nIueDx+ry2S0QHTZbqaVcZjyvRAPKTIAU4Jwxm+TXZd2b2vHrzPcJtCCIIAHxJL0uOjtm0975rDbwt1EAP57ew1cYm6tURVoTIkn7/O/JpuWvLfCgeRklWFAZGYg4QCdQx8/0yXnYlDLQQZW0MWTMXgM1S1sr1Uy6Vwntgm4hCAtFuUd8CyJxjDjr76TNJf2n14bYgfyXYR7HZGPi4aqS9LOd8=
+  on:
+    branch: master
+    tags: false
+    condition: $TRAVIS_PYTHON_VERSION = "2.7"
+- provider: pypi
+  distributions: sdist
+  user: iamjohnnym
+  password:
+    secure: t67YMVegc6Ndnm0GbmWlHLK8/Prj8zDcPvPyECW5hPIL6q+LYHLP8DwpU84lBKWtiWw1kZgNAS/7NTz7C0AolgF9n/a+7QWqEyvWVllRkrKPcvjbc3SmrGJO311nvmCC4VIQoTJG96tVen83suaXPXMnbLXKShwJtkD8Sq6Yg4pMFXnfu2fG3gtKHTuTyHiDR914/vsgZMPQQARMTMPjPYU3VtAKpPaAcFHe+NwB0YdsqZlHLMokoCwrQF239VkL0YOxSyDtLRRFbJbL+nmOIRaaYLJ+JJssKtbuYGU5AOCMmuMSLqBtp9uZwdCpEWDz0X+62B1haOa+CrtUL+O+sBnXgmVtDo6vRU9Tmucyn3SNahL9d2I3uqZYL8at6EFUQ5qLLJCbeCFOhwyU4QfaCQFx7EtfK1jxM5T8YHSIyKziJxsVzB7UHiiBMNpGjbnjvuyP4gkDqmexh/Ky/nIueDx+ry2S0QHTZbqaVcZjyvRAPKTIAU4Jwxm+TXZd2b2vHrzPcJtCCIIAHxJL0uOjtm0975rDbwt1EAP57ew1cYm6tURVoTIkn7/O/JpuWvLfCgeRklWFAZGYg4QCdQx8/0yXnYlDLQQZW0MWTMXgM1S1sr1Uy6Vwntgm4hCAtFuUd8CyJxjDjr76TNJf2n14bYgfyXYR7HZGPi4aqS9LOd8=
+  on:
+    branch: master
+    tags: true
+    condition: $TRAVIS_PYTHON_VERSION = "2.7"
+- provider: lambda
+  function_name: salesforce-lambda-staging
+  region: us-east-1
+  role: 'arn:aws:iam::810306730299:role/service-role/salesforce-lambda-role'
+  runtime: python2.7
+  handler_name: salesforce_lambda.lambda_handler
+  zip: salesforce_lambda.zip
+  secret_access_key:
+    secure: IQrt3lyz8c4WZ/CCgXSPtxcgthaROD3i06PwYaz0WxQ2teTJns5zYu8RDkfN3hfvfaR76Xiq7tUhic+2JbFdJMmkJzuLjMLjpnCNzRTCjTHOImwKc6YJxPD7wlaQflAHgY0hoQMPFQpSSCYVJOCITrjpAnFKTvHleNrNMaJUmU4IqbrOxZdDyJJFnO6ikLzeGye7NsD9JPU/IQFDZyHucjqze1kkMZ+j7ia6wYdgM24d0R/oNo22UqvGHFNJK105cCyeSD17I5GUaGCZJdBzcHPvEKarlec6hE28pcoVhpSr3mZgFlU0sDnPTfplfJp4OuzF0JIybWewoO/DFAPCFsMcn8/mPfZk5SbJo5IMNwpGUwI334ZFGuXQOpPa91jDVS9z/ghvuNcyoq26id6g+cyMcmzawJPkuPYyPSuR+FsKzHV0APRzKn2IA7IJQ7Dc7cZzTy2r7t2LpdbNHkg5SidFORl7LreJnIqxJaaPgXoG9vWJkNhvPPqWXhe9UH3AhmmpWfJ/GCnwUfY3yuV20Q2uhAtqgUkZGAeOO3o/41LbtJHWuKBLmLlV1HDFy2Rn/Sf+qBqTlEZLng/bp79QWKOOShsDBI/pIpkLAiwZBBVoN1JbyzOXevug0unad7Gp0ckI0qycBUwVEvm9mLQz5vUMzPDFl9TBDXfexPmkY5A=
+  access_key_id:
+    secure: YIIpt5I4CD4VRcyC2dxef0wawzEqe8kc+Lm4U8QDpjRQNiye9NEcCtDcG2ytPz15DKDV/109G4NkDHZPYmRUdojtm4FRKknjfA+4kBELOIaHXTyONfCRDJBGG/twmUdazFN4F4R7TcxV1vxW4nHYHw+5JYS/mZNT0iTEnG+mf3aqltxD4yR8V8vxyMbE/qht0g46VBNYBatrqA/c0tn88OzKDOQw/hnTurPMA8cOJR+aRDs6ITXvmAXdXY7ZoZN9adE3Z9YsJCV7vheINtKpeDafzribmXMPgR6PB3zfbEq8kG9SNLI7GyWnrJypaSw7sBI2MmP3ECU+gmNjLPjQLV2b4X7Ze8Iri+mPiDiYpCLH5t3LTbDWcBDZrsuwbhJSRTC2nfmBVWioOgeZTd/DXvX443mwG8llBacuZfRTQGcE+lscKa+UQFX+1gYrBcLYxGld5wxvUfQcigpaS/Q6S7ZkR2X6of5Zgw1VpUaVJ9qH0FwqwaGzibgZTfdrMex7SqhL7EYfX+h42dcBocjBNxk3/AMl1gq0YiWPUqqAIiCA4VolnMvk7nT9Nit4h2GWvtb8WNU5TuBIElWikm5d9/X0det91LHzbvO1osFcjMrGQWiD8PRGambkSNmjNyf2OecOdSzTdtsxisZRT8htwXxNqqpJnGYnNhpRQIZyuQo=
+  on:
+    branch: staging
+    tags: false
+    condition: $TRAVIS_PYTHON_VERSION = "2.7"
