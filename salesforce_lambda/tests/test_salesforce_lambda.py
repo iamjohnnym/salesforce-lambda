@@ -16,7 +16,7 @@ tickets = json.loads(tickets)
 class TestSalesForceAnalytics(unittest.TestCase):
     def setUp(self):
         results = lambda_handler(tickets, 'foo')
-        self.payload = json.loads(results)
+        self.payload = results
 
     def test_sample_tickets(self):
         self.assertEqual(3182, len(tickets['payload']))

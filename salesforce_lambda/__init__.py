@@ -21,6 +21,6 @@ def lambda_handler(event, context):
     if 'analytics' in resource:
         if http_method == "POST":
             analytics = SalesForceAnalytics(tickets=payload).run()
-            return json.dumps(analytics,default=serializer)
+            return json.loads(json.dumps(analytics,default=serializer))
         else:
             return {'error': 'Invalid Request'}
