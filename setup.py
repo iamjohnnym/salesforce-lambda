@@ -6,7 +6,7 @@ def readme():
 
 
 setup(name='salesforce-lambda',
-      version='0.1',
+      version='0.1.1',
       description="Fill me in",
       classifiers=[
           'Development Status :: 3 - Alpha',

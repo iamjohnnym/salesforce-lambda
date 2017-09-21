@@ -3,9 +3,6 @@ import json
 import datetime
 from salesforce_analytics import SalesForceAnalytics
 
-def serializer(o):
-    if isinstance(o, datetime.datetime):
-        return o.__str__()
 
 def get_resource(event):
     if event['context'].has_key('resource-path'):
@@ -20,7 +17,6 @@ def lambda_handler(event, context):
 
     if 'analytics' in resource:
         if http_method == "POST":
-            analytics = SalesForceAnalytics(tickets=payload).run()
-            return json.loads(json.dumps(analytics,default=serializer))
+            return SalesForceAnalytics(tickets=json.dumps(payload)).run()
         else:
             return {'error': 'Invalid Request'}
