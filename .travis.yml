@@ -53,7 +53,9 @@ deploy:
   region: us-east-1
   role: 'arn:aws:iam::810306730299:role/service-role/salesforce-lambda-role'
   runtime: python2.7
-  handler_name: salesforce_lambda.lambda_handler
+  handler_name: lambda_handler
+  module_name: salesforce_lambda
+  timeout: 45
   zip: salesforce_lambda.zip
   secret_access_key:
     secure: IQrt3lyz8c4WZ/CCgXSPtxcgthaROD3i06PwYaz0WxQ2teTJns5zYu8RDkfN3hfvfaR76Xiq7tUhic+2JbFdJMmkJzuLjMLjpnCNzRTCjTHOImwKc6YJxPD7wlaQflAHgY0hoQMPFQpSSCYVJOCITrjpAnFKTvHleNrNMaJUmU4IqbrOxZdDyJJFnO6ikLzeGye7NsD9JPU/IQFDZyHucjqze1kkMZ+j7ia6wYdgM24d0R/oNo22UqvGHFNJK105cCyeSD17I5GUaGCZJdBzcHPvEKarlec6hE28pcoVhpSr3mZgFlU0sDnPTfplfJp4OuzF0JIybWewoO/DFAPCFsMcn8/mPfZk5SbJo5IMNwpGUwI334ZFGuXQOpPa91jDVS9z/ghvuNcyoq26id6g+cyMcmzawJPkuPYyPSuR+FsKzHV0APRzKn2IA7IJQ7Dc7cZzTy2r7t2LpdbNHkg5SidFORl7LreJnIqxJaaPgXoG9vWJkNhvPPqWXhe9UH3AhmmpWfJ/GCnwUfY3yuV20Q2uhAtqgUkZGAeOO3o/41LbtJHWuKBLmLlV1HDFy2Rn/Sf+qBqTlEZLng/bp79QWKOOShsDBI/pIpkLAiwZBBVoN1JbyzOXevug0unad7Gp0ckI0qycBUwVEvm9mLQz5vUMzPDFl9TBDXfexPmkY5A=
